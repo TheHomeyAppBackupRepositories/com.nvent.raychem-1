@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.nvent.raychem",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "compatibility": ">=5.0.0",
   "platforms": [
     "local",
@@ -90,7 +90,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=senz"
+            "filter": "driver_id=senz&capabilities=connected"
           }
         ],
         "id": "connected_false"
@@ -110,7 +110,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=senz"
+            "filter": "driver_id=senz&capabilities=connected"
           }
         ],
         "id": "connected_true"
@@ -128,7 +128,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=senz"
+            "filter": "driver_id=senz&capabilities=heating"
           }
         ],
         "id": "heating_false"
@@ -146,14 +146,14 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=senz"
+            "filter": "driver_id=senz&capabilities=heating"
           }
         ],
         "id": "heating_true"
       },
       {
         "title": {
-          "en": "Operating mode has changed",
+          "en": "Operating mode changed",
           "nl": "Bedrijfsmodus is veranderd",
           "de": "Betriebsart hat sich geändert",
           "fr": "Mode fonctionnement a changé",
@@ -180,19 +180,19 @@
         ],
         "args": [
           {
-            "title": {
-              "en": "Program",
-              "nl": "Programma",
-              "de": "Programm",
-              "fr": "Programme",
-              "it": "Programma",
-              "sv": "Program",
-              "no": "Program",
-              "es": "Programa",
-              "da": "Program"
-            },
             "type": "dropdown",
             "name": "operating_mode",
+            "title": {
+              "en": "program",
+              "nl": "programma",
+              "de": "Programm",
+              "fr": "programme",
+              "it": "programma",
+              "sv": "program",
+              "no": "program",
+              "es": "programa",
+              "da": "program"
+            },
             "values": [
               {
                 "id": "program",
@@ -261,7 +261,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=senz"
+            "filter": "driver_id=senz&capabilities=operating_mode"
           }
         ],
         "id": "operating_mode_changed"
@@ -283,7 +283,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=senz"
+            "filter": "driver_id=senz&capabilities=connected"
           }
         ],
         "id": "connected"
@@ -301,7 +301,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=senz"
+            "filter": "driver_id=senz&capabilities=heating"
           }
         ],
         "id": "is_heating"
@@ -335,19 +335,19 @@
         ],
         "args": [
           {
-            "title": {
-              "en": "Program",
-              "nl": "Programma",
-              "de": "Programm",
-              "fr": "Programme",
-              "it": "Programma",
-              "sv": "Program",
-              "no": "Program",
-              "es": "Programa",
-              "da": "Program"
-            },
-            "name": "operating_mode",
             "type": "dropdown",
+            "name": "operating_mode",
+            "title": {
+              "en": "program",
+              "nl": "programma",
+              "de": "Programm",
+              "fr": "programme",
+              "it": "programma",
+              "sv": "program",
+              "no": "program",
+              "es": "programa",
+              "da": "program"
+            },
             "values": [
               {
                 "id": "program",
@@ -416,7 +416,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=senz"
+            "filter": "driver_id=senz&capabilities=operating_mode"
           }
         ],
         "id": "operating_mode_is"
@@ -452,19 +452,19 @@
         ],
         "args": [
           {
-            "title": {
-              "en": "Program",
-              "nl": "Programma",
-              "de": "Programm",
-              "fr": "Programme",
-              "it": "Programma",
-              "sv": "Program",
-              "no": "Program",
-              "es": "Programa",
-              "da": "Program"
-            },
-            "name": "operating_mode",
             "type": "dropdown",
+            "name": "operating_mode",
+            "title": {
+              "en": "program",
+              "nl": "programma",
+              "de": "Programm",
+              "fr": "programme",
+              "it": "programma",
+              "sv": "program",
+              "no": "program",
+              "es": "programa",
+              "da": "program"
+            },
             "values": [
               {
                 "id": "program",
@@ -505,7 +505,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=senz"
+            "filter": "driver_id=senz&capabilities=operating_mode"
           }
         ],
         "id": "operating_mode_set"
@@ -619,13 +619,13 @@
   ],
   "capabilities": {
     "connected": {
+      "type": "boolean",
       "title": {
         "en": "Connected",
         "nl": "Verbonden",
         "de": "Verbunden",
         "fr": "Connectée"
       },
-      "type": "boolean",
       "getable": true,
       "setable": false,
       "insights": true,
@@ -644,11 +644,11 @@
       "uiComponent": null
     },
     "heating": {
+      "type": "boolean",
       "title": {
         "en": "Heating",
         "nl": "Verwarmen"
       },
-      "type": "boolean",
       "getable": true,
       "setable": true,
       "uiComponent": "sensor",
